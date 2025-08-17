@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShreeInfinity | Official Site</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      overflow-x: hidden;
+      color: #f5f5f5;
+    }
+
+    .background-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .floating-polaroids {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: opacity 1s ease;
+    }
+
+    .floating-polaroids.hidden {
+      opacity: 0;
+    }
+
+    .polaroid {
+      position: absolute;
+      width: 120px;
+      height: 140px;
+      background: linear-gradient(to bottom, #e8f0ff, #d0e5ff);
+      border: 4px solid #b0d4ff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transform: rotate(var(--angle));
+      animation: float 12s ease-in-out infinite alternate;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #333;
+      font-weight: bold;
+      text-align: center;
+      padding: 8px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(var(--angle)); }
+      50% { transform: translateY(-20px) rotate(var(--angle)); }
+      100% { transform: translateY(0) rotate(var(--angle)); }
+    }
+
+    .flower {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      animation: rotate 15s linear infinite, drift 20s ease-in-out infinite;
+      opacity: 0.7;
+      filter: hue-rotate(200deg) brightness(1.2);
+    }
+
+    .flower img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes drift {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-30px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .top-bar {
+      background-color: rgba(0, 20, 40, 0.6);
+      padding: 5px 20px;
+      font-size: 14px;
+      color: #e0f4ff;
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .top-bar a {
+      color: #d8efff;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+
+    .top-bar a:hover {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px 0;
+      backdrop-filter: blur(8px);
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #f5faff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #9ad3ff;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      padding: 60px 30px;
+      gap: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      background: rgba(240, 236, 236, 0.954);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .text-content {
+      flex: 1;
+      color: #ffffff;
+    }
+
+    .text-content h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      line-height: 1.4;
+      color: #ffffff;
+    }
+
+    .text-content small {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #aacfff;
+      margin-bottom: 10px;
+    }
+
+    .images {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .images img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .signature {
+      margin-bottom: 10px;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 28px;
+      color: #aadfff;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+
+      .polaroid, .flower {
+        display: none;
+      }
+
+      .section-block {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Layer with Flowers and Floating Polaroids -->
+  <!-- <div class="background-layer">
+    <div class="flower" style="top: 10%; left: 20%;"><img src="flower1.png" alt="flower1"></div>
+    <div class="flower" style="top: 50%; left: 90%;"><img src="flower2.png" alt="flower2"></div>
+    <div class="flower" style="top: 80%; left: 10%;"><img src="flower3.png" alt="flower3"></div> -->
+    <!-- <div class="flower" style="top: 30%; left: 60%;"><img src="flower41.png" alt="flower4"></div> -->
+    <!-- <div class="flower" style="top: 30%; left: 60%;"><img src="flower5.png" alt="flower4"></div> -->
+
+    <!-- <div class="floating-polaroids" id="polaroids">
+      <div class="polaroid" style="--angle: -8deg; top: 10%; left: 5%;">Polaroid 1</div>
+      <div class="polaroid" style="--angle: 6deg; top: 30%; left: 80%;">Polaroid 2</div>
+      <div class="polaroid" style="--angle: -4deg; top: 60%; left: 15%;">Polaroid 3</div>
+      <div class="polaroid" style="--angle: 10deg; top: 80%; left: 65%;">Polaroid 4</div>
+    </div> -->
+  </div>
+
+  <div class="top-bar">
+    <a href="index.html">Grown-ups</a>
+    <a href="index.html">Younger Readers</a>
+  </div>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="desk.html">My Desk</a>
+    <a href="news.html">Book News</a>
+    <a href="story.html">My Story</a>
+    <a href="inmywords.html">In My Words</a>
+  </nav>
+
+  <section class="main-content">
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <div class="signature" style="color: blue;">Shree</div>
+        <small style="color: rgb(226, 17, 188);">NEWS</small>
+        <h3 style="color: black;">Life isn’t a straight path—it’s more like a patchwork of detours, delays, and unexpected beauty. We plan for clarity, but often grow in the confusion. The lessons don’t always come with explanations, but they always come with purpose.
+</h1>
+      </div>
+      <div class="images">
+        <img src="my5.jpg" alt="shree writing">
+      </div>
+    </div>
+
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <!-- <small  style="color: rgb(226, 17, 188);">UPCOMING</small> -->
+        <h3 style="color: black;">Some days feel like poetry, others like puzzles. We chase meaning in moments and find it in hindsight. It’s easy to overlook the quiet victories—waking up, holding on, starting again. But they matter. They shape us.</h1>
+      </div>
+      <div class="images">
+        <img src="my6.png" alt="Upcoming Book">
+      </div>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <div class="signature" style="color: blue;">Shree</div>
+        <small  style="color: rgb(226, 17, 188);">NEWS</small>
+        <h1 style="color: black;">We are all stories in motion, and the best parts often unfold when no one is watching. Life teaches through experience, and we edit ourselves as we go—not to be perfect, but to be honest.
+.</h1>
+      </div>
+      <div class="images">
+        <img src="my7.png" alt="Shree writing">
+      </div>
+    </div>
+
+    <!-- <div class="section-block observer-target">
+      <div class="text-content">
+        <small style="color: rgb(226, 17, 188);">UPCOMING</small>
+        <h1 style="color: black;">At its core, life is about connection. To each other. To ourselves. To something greater we might not always name, but feel deeply. And through writing, I try to hold those threads a little tighter, even just for a page.</h1>
+      </div>
+      <div class="images">
+        <img src="book-cover.png" alt="Upcoming Book">
+      </div>
+    </div> -->
+  </section>
+
+  <!-- <section class="main-content">
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <div class="signature" style="color: blue;">Shree</div>
+        <small style="color: rgb(226, 17, 188);">NEWS</small>
+        <h1 style="color: black;">HBO Original Harry Potter television series<br>Begins Production at Warner Bros. Studios Leavesden</h1>
+      </div>
+      <div class="images">
+        <img src="jkrowling-photo.png" alt="JK Rowling writing">
+      </div>
+    </div>
+
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <small style="color: rgb(226, 17, 188);">UPCOMING</small>
+        <h1 style="color: black;">Magical Stories Coming Soon<br>Stay Tuned for Exclusive Previews</h1>
+      </div>
+      <div class="images">
+        <img src="book-cover.png" alt="Upcoming Book">
+      </div>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <div class="signature" style="color: blue;">Shree</div>
+        <small  style="color: rgb(226, 17, 188);">NEWS</small>
+        <h1 style="color: black;">HBO Original Harry Potter television series<br>Begins Production at Warner Bros. Studios Leavesden</h1>
+      </div>
+      <div class="images">
+        <img src="jkrowling-photo.png" alt="JK Rowling writing">
+      </div>
+    </div>
+
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <small>UPCOMING</small>
+        <h1 style="color: black;">Magical Stories Coming Soon<br>Stay Tuned for Exclusive Previews</h1>
+      </div>
+      <div class="images">
+        <img src="book-cover.png" alt="Upcoming Book">
+      </div>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <div class="signature" style="color: blue;">Shree</div>
+        <small>NEWS</small>
+        <h1 style="color: black;">HBO Original Harry Potter television series<br>Begins Production at Warner Bros. Studios Leavesden</h1>
+      </div>
+      <div class="images">
+        <img src="jkrowling-photo.png" alt="JK Rowling writing">
+      </div>
+    </div>
+
+    <div class="section-block observer-target">
+      <div class="text-content">
+        <small>UPCOMING</small>
+        <h1 style="color: black;">Magical Stories Coming Soon<br>Stay Tuned for Exclusive Previews</h1>
+      </div>
+      <div class="images">
+        <img src="book-cover.png" alt="Upcoming Book">
+      </div>
+    </div>
+  </section> -->
+
+  <script>
+    const observerTargets = document.querySelectorAll('.observer-target');
+    const polaroids = document.getElementById('polaroids');
+
+    const observer = new IntersectionObserver(entries => {
+      const isVisible = entries.some(entry => entry.isIntersecting);
+      polaroids.classList.toggle('hidden', isVisible);
+    }, {
+      threshold: 0.1
+    });
+
+    observerTargets.forEach(target => observer.observe(target));
+  </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>J.K. Rowling's Stories</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+      color: #333;
+      background: url('sky.png') no-repeat center center/cover;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px 20px;
+      font-size: 14px;
+      color: #ccc;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .top-bar a {
+      color: #ccc;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+
+    .top-bar a:hover {
+      color: #fff;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #083c5e;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px 10px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url('shree1.png') no-repeat center center/cover;
+      height: 100vh;
+      width:1000px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #be5ddb;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-family: 'Cursive', serif;
+      margin-bottom: 10px;
+    }
+
+    .hero h3 {
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #5fddc2;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-top: 20px;
+      max-width: 600px;
+      color: #be5ddb;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav a {
+        margin: 8px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero h3 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="index.html">Grown-ups</a>
+    <a href="index.html">Younger Readers</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="desk.html">My Desk</a>
+    <a href="news.html">Book News</a>
+    <a href="story.html">My Story</a>
+    <a href="inmywords.html">In My Words</a>
+    <!-- <a href="#harrypotter">Harry Potter</a>
+    <a href="#ickabog">The Ickabog</a>
+    <a href="#christmaspig">The Christmas Pig</a> -->
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <!-- <h1>Sheetal Rawat’s</h1>
+    <h3>STORIES</h3>
+    <p>Welcome to my website for readers young and old. Dive into the magical world of storytelling!</p> -->
+  </section>
+
+  <!-- Other Sections -->
+  <section id="desk">
+    <h2>My Desk</h2>
+    <p>Get a glimpse of my writing space and creative process as I work on new tales and magical worlds.</p>
+  </section>
+
+  <section id="news">
+    <h2>Book News</h2>
+    <p>Stay updated on my latest publications, upcoming releases, and exciting literary events.</p>
+  </section>
+
+  <section id="story">
+    <h2>My Story</h2>
+    <p>Discover the journey that led me to become an author, from my early inspirations to global success.</p>
+  </section>
+
+  <section id="harrypotter">
+    <h2>Harry Potter</h2>
+    <p>Explore the world of Hogwarts, the magic of friendship, and the story that captured hearts worldwide.</p>
+  </section>
+
+  <section id="ickabog">
+    <h2>The Ickabog</h2>
+    <p>A dark and gripping fairy tale for children — with mystery, courage, and unexpected heroes.</p>
+  </section>
+
+  <section id="christmaspig">
+    <h2>The Christmas Pig</h2>
+    <p>Join Jack and his toy on an unforgettable journey on Christmas Eve to find what was lost.</p>
+  </section>
+
+</body>
+</html>

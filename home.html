@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Books Showcase with Merged Navigation</title>
+  <style>
+    /* Reset & box sizing */
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111; /* fallback color */
+      color: #fff;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* PAGE BACKGROUND LAYER */
+    .page-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('sky.png') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px 20px;
+      font-size: 14px;
+      color: #ccc;
+      display: flex;
+      justify-content: flex-start;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1100;
+    }
+    .top-bar a {
+      color: #ccc;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+    .top-bar a:hover {
+      color: #fff;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+      background-color: #063a57;
+      padding: 12px 10px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      position: fixed;
+      width: 100%;
+      top: 28px; /* below top-bar */
+      z-index: 1050;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+
+    /* SECTION STYLING */
+    .section {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      padding-top: 100px; /* offset fixed top bar + nav */
+    }
+    .section::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.6);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      z-index: 0;
+    }
+    .section.revealed::before {
+      opacity: 1;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section.revealed .content {
+      opacity: 1; transform: translateY(0);
+    }
+    .image, .text {
+      flex: 1; padding: 2rem;
+    }
+    .image img {
+      width: 100%; height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .text h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .text p { font-size: 1.1rem; line-height: 1.4; }
+    .section:nth-child(even) .content { flex-direction: row-reverse; }
+    .section:nth-child(even) .text { text-align: right; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+      .section:nth-child(even) .content {
+        flex-direction: column;
+      }
+      .text {
+        text-align: left !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE BACKGROUND IMAGE -->
+  <div class="page-bg"></div>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <a href="index.html">Grown-ups</a>
+    <a href="index.html">Younger Readers</a>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="desk.html">My Desk</a>
+    <a href="news.html">Book News</a>
+    <a href="story.html">My Story</a>
+    <a href="inmywords.html">In My Words</a>
+  </nav>
+
+  <!-- SECTIONS -->
+  <section class="section" data-bg="bg1.jpg" id="sec1">
+    <div class="content">
+      <div class="image"><img src="my1.png" alt="Book One"></div>
+      <div class="text">
+        <h2>Hi it's me</h2>
+        <p>Meet the mind behind the words — passionate, curious, and always eager to explore new ideas. With a warm smile and a sharp eye for detail, I bring stories to life through thoughtful writing and creative insights. Whether I’m crafting compelling content or diving deep into research, my goal is to connect with readers and deliver value with every word. Let’s embark on this journey of discovery together, one article at a time.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" data-bg="bg2.jpg" id="sec2">
+    <div class="content">
+      <div class="image"><img src="my2.png" alt="Book Two"></div>
+      <div class="text">
+        <h2>What I feel</h2>
+        <p>In every word I write, there’s a piece of who I am — thoughtful, observant, and always seeking meaning beyond the surface. Whether I’m reflecting on life’s subtle lessons or sharing practical insights, my aim is to connect deeply with readers. Writing isn’t just a skill for me; it’s a way to express curiosity, compassion, and clarity. With a warm smile and a mind always in motion, I invite you to pause, reflect, and maybe see things just a little differently.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" data-bg="bg3.jpg" id="sec3">
+    <div class="content">
+      <div class="image"><img src="my3.png" alt="Book Three"></div>
+      <div class="text">
+        <h2>Little Clumsy</h2>
+        <p>With a calm presence and a curious mind, I find inspiration in the world around me — from quiet moments in nature to everyday human stories. As a writer, I strive to bring clarity, warmth, and a touch of reflection into everything I create. Whether I’m walking under open skies or working behind a screen, my goal remains the same: to share words that resonate, inspire thought, and spark meaningful connection.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" data-bg="bg4.jpg" id="sec4">
+    <div class="content">
+      <div class="image"><img src="my4.png" alt="Book Four"></div>
+      <div class="text">
+        <h2>My Story</h2>
+        <p>A storyteller at heart and a dreamer by nature, I find magic in the little things — starlit skies, quiet thoughts, and the beauty of authentic expression. My writing blends emotion with imagination, inviting readers to see the world through a softer, more thoughtful lens. Whether crafting reflective narratives or exploring big ideas, I aim to light up minds the way stars brighten the night — subtly, but with lasting impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Setup backgrounds & reveal on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(sec => {
+        const bg = sec.getAttribute('data-bg');
+        const style = document.createElement('style');
+        style.textContent = `#${sec.id}::before { background-image: url('${bg}'); }`;
+        document.head.appendChild(style);
+      });
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      sections.forEach(sec => obs.observe(sec));
+    });
+  </script>
+
+</body>
+</html>

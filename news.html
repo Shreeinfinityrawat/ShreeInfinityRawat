@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Raleway&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Reset to neutralize default browser styling and margin collapse */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: url('sky.png') no-repeat center center/cover;
+      color: #222;
+    }
+
+    .top-bar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px 20px;
+      font-size: 14px;
+      color: #ccc;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .top-bar a {
+      color: #ccc;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+    .top-bar a:hover {
+      color: #fff;
+    }
+
+    nav {
+      background-color: #063a57;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+
+    .page-title {
+      text-align: center;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 4rem;
+      color: #1e293b;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .book-mockup-flex {
+      display: flex;               /* disables margin collapse inside */
+      gap: 1rem;                   /* evenly spaces two books */
+      justify-content: center;
+      align-items: flex-end;
+      padding: 1rem 0;
+    }
+
+    .book {
+      width: 30vw;
+      max-width: 300px;
+      cursor: pointer;
+      perspective: 800px;
+    }
+
+    .book img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: rotateY(-10deg) rotateX(2deg);
+      transform-style: preserve-3d;
+      box-shadow: 8px 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.6s, box-shadow 0.6s;
+      border-radius: 8px;
+    }
+
+    .book:hover img {
+      transform: rotateY(0deg) rotateX(0deg) translateY(-10px);
+      box-shadow: 12px 12px 35px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background-color: rgba(6, 58, 87, 0.95);
+      color: #eee;
+      font-size: 14px;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 3rem;
+      }
+      .book {
+        width: 45vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="index.html">Grown‑ups</a>
+    <a href="index.html">Younger Readers</a>
+  </div>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="desk.html">My Desk</a>
+    <a href="news.html">Book News</a>
+    <a href="story.html">My Story</a>
+    <a href="inmywords.html">In My Words</a>
+  </nav>
+
+  <h1 class="page-title">Book News</h1>
+
+  <div class="book-mockup-flex">
+    <div class="book">
+      <img src="from.png" alt="From Princess to Phoenix">
+    </div>
+    <div class="book">
+      <img src="she.png" alt="She Called Me Older">
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Your Site | All rights reserved.
+  </footer>
+
+</body>
+</html>

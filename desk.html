@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Desk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Shadows Into Light', cursive;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Background layer */
+    .page-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('sky.png') no-repeat center center/cover;
+      z-index: -1;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px 20px;
+      font-size: 14px;
+      color: #ccc;
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      z-index: 10;
+    }
+
+    .top-bar a {
+      color: #ccc;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+
+    .top-bar a:hover {
+      color: #fff;
+    }
+
+    nav {
+      background-color: #083c5e;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px 10px;
+      z-index: 10;
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .desk-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 50px 20px;
+      position: relative;
+      min-height: 80vh;
+      z-index: 5;
+    }
+
+    .note {
+      background-color: #fff;
+      padding: 20px;
+      width: 280px;
+      border: 2px solid #ddd;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      transform: rotate(-2deg);
+      font-family: 'Gloria Hallelujah', cursive;
+      font-size: 18px;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .note::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: gold;
+      border-radius: 50%;
+    }
+
+    .photo, .sticky {
+      width: 200px;
+      height: auto;
+      transform: rotate(3deg);
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .sticky {
+      background: yellow;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: 'Gloria Hallelujah', cursive;
+    }
+
+    .circle-center {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: white;
+      color: #083c5e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    @media screen and (max-width: 768px) {
+      .desk-container {
+        flex-direction: column;
+      }
+      .circle-center {
+        margin: 30px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full Page Background -->
+  <div class="page-bg"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="index.html">Grown-ups</a>
+    <a href="index.html">Younger Readers</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="desk.html">My Desk</a>
+    <a href="news.html">Book News</a>
+    <a href="story.html">My Story</a>
+    <a href="inmywords.html">In My words</a>
+  </nav>
+
+  <!-- Desk Area -->
+  <div class="desk-container">
+    <img src="desk.png" class="photo" alt="Desk" style="width: 1000px; height: 1000px;"/>
+    <!-- Optional elements -->
+    <!--
+    <div class="sticky">Buy more popcorn</div>
+    <div class="circle-center">Click and drag<br>to explore</div>
+    <div class="note">
+      Welcome to my desk!<br><br>
+      If you want to find out more about me as a writer, how I create my stories and the worlds I’ve created, you’re in the right place.<br><br>
+      Enjoy exploring and discovering!<br><br>
+      <strong>✍</strong>
+    </div>
+    -->
+  </div>
+
+</body>
+</html>

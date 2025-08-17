@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Two-Slide Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(to right, #1e3c72, #2a5298); /* overall background */
+    }
+
+    .slide {
+      flex: 1;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .left {
+      background: linear-gradient(to bottom right, #243B55, #141E30);
+      border-right: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .right {
+      background: linear-gradient(to bottom right, #2a5298, #1e3c72);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .subtext {
+      font-size: 16px;
+      color: #e0e0e0;
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      padding: 12px 24px;
+      background-color: #4267b2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #365899;
+    }
+
+    .signature {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 34px;
+      color: #a8c5f7;
+      margin-bottom: 15px;
+    }
+
+    .illustration {
+      position: absolute;
+      bottom: 20px;
+      opacity: 0.1;
+      width: 100px;
+      height: auto;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="slide left">
+      <div class="signature">Shree</div>
+      <div class="subtext">
+        This way for all the latest news and information about Sheetal Rawat and her writing.
+      </div>
+      <button class="button">
+        <a href="shree2.html">Enter here</a>
+      </button>
+    </div>
+    <div class="slide right">
+      <div class="logo">Sheetal Rawat's <br/> <strong>STORIES</strong></div>
+      <div class="subtext">
+        This way for younger readers, who want to find out more about Sheetal and her children’s books.
+      </div>
+      <button class="button">
+        <a href="shree1.html">Come on in!</a>
+      </button>
+    </div>
+  </div>
+</body>
+</html>
